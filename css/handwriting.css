@@ -1,0 +1,86 @@
+﻿/* ========================================
+   ВОЛШЕБНЫЙ ТЕКСТ "ОТ РУКИ" (handwriting.css)
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+.handwritten {
+    font-family: 'Caveat', 'Comic Sans MS', cursive;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* ===== ЭФФЕКТ ПОЯВЛЕНИЯ ===== */
+.handwriting-reveal {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #ffd700;
+    animation: typeWriter 3s steps(30, end) forwards,
+               blinkCursor 0.8s step-end infinite;
+    width: 0;
+    max-width: fit-content;
+    font-family: 'Caveat', cursive;
+    font-size: 2.2rem;
+    color: #ffd700;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+    padding-right: 5px;
+}
+
+@keyframes typeWriter {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+@keyframes blinkCursor {
+    0%, 100% { border-color: #ffd700; }
+    50% { border-color: transparent; }
+}
+
+/* ===== ЭФФЕКТ СВЕЧЕНИЯ ===== */
+.ink-glow {
+    animation: inkGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes inkGlow {
+    0% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.2), 0 0 20px rgba(255, 215, 0, 0.1); }
+    100% { text-shadow: 0 0 30px rgba(255, 215, 0, 0.5), 0 0 60px rgba(255, 215, 0, 0.2), 0 0 90px rgba(255, 215, 0, 0.05); }
+}
+
+/* ===== ЗАПИСКИ НА ПОЛЯХ ===== */
+.marginalia {
+    font-family: 'Caveat', cursive;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    transform: rotate(-1deg);
+    position: relative;
+    padding-left: 12px;
+    border-left: 1px dashed rgba(255, 215, 0, 0.15);
+}
+
+/* ===== РАЗДЕЛИТЕЛЬ С ПЕРОМ ===== */
+.quill-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 8px 0;
+}
+
+.quill-divider::before,
+.quill-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.15), transparent);
+}
+
+.quill-divider .icon {
+    font-size: 1.2rem;
+    animation: quillSway 2s ease-in-out infinite;
+}
+
+@keyframes quillSway {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}

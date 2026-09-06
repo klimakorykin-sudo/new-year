@@ -1,0 +1,61 @@
+﻿/* ===== ТАЙМЕР ===== */
+.timer-container {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 18px 30px 22px;
+    margin: 8px 0 15px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    box-shadow: 0 0 60px rgba(255, 215, 0, 0.05);
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.timer-label {
+    color: #ffd700;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.timer {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.timer-item {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    padding: 8px 18px;
+    min-width: 65px;
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.timer-item:hover {
+    border-color: rgba(255, 215, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+.timer-item .number {
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 900;
+    display: block;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+}
+
+.timer-item .label {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

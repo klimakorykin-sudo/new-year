@@ -1,0 +1,308 @@
+﻿/* ========================================
+   ГЛАВНЫЕ СТИЛИ — ТЕПЛЫЙ НОВОГОДНИЙ ФОН
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(180deg, 
+        #1a0a2e 0%,
+        #2d1b4e 25%,
+        #1a2a4a 50%,
+        #2d1b3e 75%,
+        #1a0a2e 100%
+    );
+    background-attachment: fixed;
+    font-family: 'Arial', 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 15px 30px;
+    position: relative;
+}
+
+/* ===== ТЕПЛОЕ СВЕЧЕНИЕ ПО ЦЕНТРУ ===== */
+body::before {
+    content: '';
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(ellipse, 
+        rgba(255, 200, 100, 0.08) 0%,
+        rgba(255, 150, 50, 0.04) 30%,
+        rgba(255, 100, 50, 0.02) 60%,
+        transparent 80%
+    );
+    pointer-events: none;
+    z-index: 0;
+    border-radius: 50%;
+    animation: warmPulse 4s ease-in-out infinite;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(0deg, 
+        rgba(255, 200, 100, 0.05) 0%,
+        rgba(255, 150, 50, 0.02) 30%,
+        transparent 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes warmPulse {
+    0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* ===== ЗОЛОТЫЕ ИСКОРКИ НА ФОНЕ ===== */
+.sparkle-bg {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    background: #ffd700;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    box-shadow: 0 0 6px rgba(255, 215, 0, 0.3);
+    animation: sparkleFloat 6s ease-in-out infinite;
+}
+
+@keyframes sparkleFloat {
+    0%, 100% { opacity: 0; transform: translateY(0) scale(0); }
+    30% { opacity: 1; transform: translateY(-20px) scale(1); }
+    70% { opacity: 1; transform: translateY(-40px) scale(0.8); }
+    100% { opacity: 0; transform: translateY(-60px) scale(0); }
+}
+
+/* ===== ЗАГОЛОВОК ===== */
+.main-title {
+    color: #fff;
+    font-size: 2.5rem;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3), 
+                 0 0 40px rgba(255, 215, 0, 0.15),
+                 0 0 80px rgba(255, 215, 0, 0.05);
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    animation: pulseGlow 2s ease-in-out infinite;
+    z-index: 10;
+    font-weight: 900;
+}
+
+.main-title span {
+    color: #ffd700;
+    font-size: 3rem;
+    display: inline-block;
+    animation: bounceName 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.3), 0 0 40px rgba(255, 215, 0, 0.1); }
+    50% { text-shadow: 0 0 40px rgba(255, 215, 0, 0.4), 0 0 80px rgba(255, 215, 0, 0.2), 0 0 120px rgba(255, 215, 0, 0.05); }
+}
+
+@keyframes bounceName {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+}
+
+/* ===== КНОПКИ ===== */
+.buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px 0 20px;
+    z-index: 10;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    z-index: 10;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn-fire {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: #fff;
+    box-shadow: 0 0 30px rgba(255, 107, 107, 0.3);
+}
+
+.btn-fire:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 50px rgba(255, 107, 107, 0.5);
+}
+
+.btn-open {
+    background: linear-gradient(135deg, #ffd700, #f9a825);
+    color: #1a1a4e;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+.btn-open:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+}
+
+.btn-reset {
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-reset:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: scale(1.05);
+}
+
+/* ===== НОВАЯ КНОПКА "ИСТОРИИ" ===== */
+.btn-stories {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.12), rgba(255, 215, 0, 0.04));
+    color: #ffd700;
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-stories:hover {
+    background: rgba(255, 215, 0, 0.15);
+    transform: scale(1.08);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.1);
+}
+
+/* ===== ПОДВАЛ ===== */
+.footer {
+    margin-top: 30px;
+    color: rgba(255, 255, 255, 0.15);
+    text-align: center;
+    font-size: 0.9rem;
+    z-index: 10;
+}
+
+.footer .small {
+    font-size: 0.7rem;
+    margin-top: 3px;
+    color: rgba(255, 255, 255, 0.06);
+}
+
+/* ===== АНИМАЦИЯ ПОЯВЛЕНИЯ ===== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   МУЗЫКАЛЬНЫЙ ПЛЕЕР
+   ======================================== */
+#music-control {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(10, 14, 39, 0.85);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 215, 0, 0.12);
+    border-radius: 50px;
+    padding: 10px 18px 10px 14px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#music-control:hover {
+    border-color: rgba(255, 215, 0, 0.25);
+}
+
+#music-play-btn {
+    font-size: 1.6rem;
+    line-height: 1;
+    transition: transform 0.2s;
+}
+
+#music-play-btn:hover {
+    transform: scale(1.1);
+}
+
+#music-track-name {
+    font-family: 'Caveat', cursive;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#music-next-btn {
+    font-size: 1.2rem;
+    line-height: 1;
+    opacity: 0.5;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+#music-next-btn:hover {
+    opacity: 1;
+}
+
+/* ===== АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНА ===== */
+@media (max-width: 480px) {
+    #music-control {
+        bottom: 20px;
+        right: 20px;
+        padding: 8px 14px 8px 10px;
+        gap: 8px;
+    }
+    #music-play-btn {
+        font-size: 1.3rem;
+    }
+    #music-track-name {
+        font-size: 0.75rem;
+        max-width: 80px;
+    }
+    #music-next-btn {
+        font-size: 1rem;
+    }
+}

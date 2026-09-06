@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Волшебство для Ани ✨</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0e27, #1a1a4e, #2d1b69);
+            font-family: 'Caveat', cursive;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 650px;
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 45px 40px;
+            border: 1px solid rgba(255,215,0,0.15);
+            text-align: center;
+            position: relative;
+            animation: paperTremble 3s ease-in-out infinite;
+        }
+        @keyframes paperTremble {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(0.2deg); }
+            75% { transform: rotate(-0.2deg); }
+        }
+        .emoji-big { font-size: 4.5rem; margin-bottom: 5px; display: block; }
+        h1 {
+            font-size: 3.5rem;
+            color: #ffd700;
+            text-shadow: 0 0 40px rgba(255,215,0,0.3);
+            margin-bottom: 5px;
+        }
+        h1 span { 
+            display: inline-block;
+            animation: shimmer 2s ease-in-out infinite;
+        }
+        @keyframes shimmer {
+            0%, 100% { text-shadow: 0 0 20px rgba(255,215,0,0.3); }
+            50% { text-shadow: 0 0 50px rgba(255,215,0,0.8), 0 0 80px rgba(255,215,0,0.4); }
+        }
+        .heart-line {
+            font-size: 2rem;
+            letter-spacing: 8px;
+            margin: 5px 0 10px;
+            animation: pulseHearts 1.5s ease-in-out infinite;
+        }
+        @keyframes pulseHearts {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        p {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            opacity: 0.9;
+            margin: 8px 0;
+            font-weight: 400;
+        }
+        .highlight {
+            color: #ffd700;
+            font-weight: 700;
+            position: relative;
+        }
+        .highlight::after {
+            content: '✦';
+            position: absolute;
+            top: -10px;
+            right: -18px;
+            font-size: 0.7rem;
+            opacity: 0.5;
+            animation: sparkle 1.5s ease-in-out infinite;
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 12px 0;
+        }
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,215,0,0.2), transparent);
+        }
+        .signature {
+            font-size: 1.8rem;
+            color: rgba(255,215,0,0.3);
+            margin-top: 10px;
+            transform: rotate(-2deg);
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 16px 45px;
+            background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,215,0,0.05));
+            color: #ffd700;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3rem;
+            border: 1px solid rgba(255,215,0,0.2);
+            transition: all 0.4s;
+            font-family: 'Caveat', cursive;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(255,215,0,0.15);
+            background: rgba(255,215,0,0.1);
+        }
+        .footnote {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            opacity: 0.25;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="emoji-big">🪄</span>
+        <h1>С НОВЫМ ГОДОМ, <span>АНЯ</span>!</h1>
+        <div class="heart-line">❤️🧡💛💚💙💜</div>
+        
+        <p>
+            ✧ эта маленькая вселенная <span class="highlight">вращается вокруг тебя</span> ✧
+        </p>
+        
+        <div class="divider"></div>
+        
+        <p style="font-size:1.2rem; opacity:0.7;">
+            🎆 <span class="highlight">звёзды</span> взрываются в твою честь<br>
+            ❄️ <span class="highlight">снег</span> танцует, чтобы ты улыбнулась<br>
+            📬 <span class="highlight">открытка</span> хранит самые тёплые слова<br>
+            ✨ и <span class="highlight">магия</span> живёт там, где ты
+        </p>
+        
+        <div class="divider"></div>
+        
+        <p style="font-size:1.8rem; color:#ffd700;">
+            ⭐ ты — главная звезда ⭐
+        </p>
+        
+        <p style="font-size:1rem; opacity:0.4; margin-top:5px;">
+            ~ а всё остальное — просто код, который тебя любит ~
+        </p>
+        
+        <a href="index.html" class="btn">🎄 вернуться в волшебство</a>
+        
+        <div class="signature">✧ с теплом, навеки ✧</div>
+        <div class="footnote">~ писано пером, от души, для самой лучшей ~</div>
+    </div>
+</body>
+</html>

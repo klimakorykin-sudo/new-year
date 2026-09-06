@@ -1,0 +1,47 @@
+﻿/* ========================================
+   СНЕГОПАД (snow.css)
+   ======================================== */
+
+#snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.snowflake {
+    position: absolute;
+    top: -20px;
+    color: #fff;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    animation: fall linear infinite;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    user-select: none;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(110vh) rotate(720deg) scale(0.3);
+        opacity: 0.1;
+    }
+}
+
+/* Размеры снежинок */
+.snowflake.size-1 { font-size: 0.8rem; animation-duration: 8s; }
+.snowflake.size-2 { font-size: 1.2rem; animation-duration: 10s; }
+.snowflake.size-3 { font-size: 1.6rem; animation-duration: 12s; }
+
+/* Мерцающие снежинки */
+.snowflake.glowing {
+    text-shadow: 0 0 15px #ffd700, 0 0 30px rgba(255, 215, 0, 0.3);
+}

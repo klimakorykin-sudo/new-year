@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎄 Анечке с любовью 🎄</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/snow.css">
+    <link rel="stylesheet" href="css/timer.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/confetti.css">
+    <link rel="stylesheet" href="css/handwriting.css">
+    <link rel="stylesheet" href="css/advent.css">
+</head>
+<body>
+    
+    <!-- ===== ЗОЛОТЫЕ ИСКОРКИ НА ФОНЕ ===== -->
+    <div id="sparkles-bg" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; overflow:hidden;"></div>
+    <script>
+        (function() {
+            const container = document.getElementById('sparkles-bg');
+            if (!container) return;
+            for (let i = 0; i < 30; i++) {
+                const spark = document.createElement('div');
+                spark.className = 'sparkle-bg';
+                spark.style.left = Math.random() * 100 + '%';
+                spark.style.top = Math.random() * 100 + '%';
+                spark.style.animationDelay = Math.random() * 6 + 's';
+                spark.style.animationDuration = 4 + Math.random() * 4 + 's';
+                spark.style.width = 2 + Math.random() * 4 + 'px';
+                spark.style.height = spark.style.width;
+                container.appendChild(spark);
+            }
+        })();
+    </script>
+    
+    <!-- ========================================================== -->
+    <!--  ВСЁ В ОДНОМ: ЁЛКА + ПОДАРКИ + АДВЕНТ + ДЕД МОРОЗ        -->
+    <!-- ========================================================== -->
+    
+    <div style="z-index:10; width:100%; max-width:750px; margin:0 auto; text-align:center; padding:8px 10px;">
+        
+        <!-- ===== ШАПКА ===== -->
+        <div style="margin-bottom:3px;">
+            <span style="font-family:'Caveat',cursive; font-size:2rem; color:rgba(255,215,0,0.12); letter-spacing:12px;">
+                ✧ ✧ ✧
+            </span>
+        </div>
+        
+        <!-- ===== ИМЯ АНИ ===== -->
+        <div style="overflow:hidden; margin:2px 0;">
+            <div style="font-family:'Caveat',cursive; font-size:4rem; color:#ffd700; 
+                        text-shadow:0 0 60px rgba(255,215,0,0.12), 0 0 120px rgba(255,215,0,0.04);
+                        animation: gentleAppear 3s ease forwards;
+                        opacity:0; transform:scale(0.9);">
+                Аня ✦
+            </div>
+        </div>
+        
+        <style>
+            @keyframes gentleAppear {
+                0% { opacity:0; transform:scale(0.9); letter-spacing:20px; }
+                100% { opacity:1; transform:scale(1); letter-spacing:5px; }
+            }
+        </style>
+        
+        <!-- ===== ЁЛКА + ДЕД МОРОЗ РЯДОМ ===== -->
+        <div style="display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; margin:5px 0; animation: fadeUp 2s ease 0.5s forwards; opacity:0;">
+            
+            <!-- ЁЛКА (ОДНА) -->
+            <div class="christmas-tree">
+                <span class="tree-top">⭐</span>
+                <div class="tree-body">
+                    <span class="line" style="font-size:5rem;">🎄</span>
+                </div>
+                <div class="tree-trunk">🪵</div>
+                
+                <!-- Игрушки -->
+                <span class="tree-ornament" style="top:20%; left:0%; animation-delay:0s;"></span>
+                <span class="tree-ornament" style="top:35%; right:0%; animation-delay:0.5s;"></span>
+                <span class="tree-ornament" style="top:55%; left:5%; animation-delay:1s;"></span>
+                <span class="tree-ornament" style="top:70%; right:2%; animation-delay:1.5s;"></span>
+                <span class="tree-ornament" style="top:40%; left:20%; animation-delay:0.3s;">💛</span>
+                <span class="tree-ornament" style="top:60%; right:15%; animation-delay:0.8s;">❤️</span>
+            </div>
+            
+            <!-- ДЕД МОРОЗ РЯДОМ -->
+            <div style="display:flex; flex-direction:column; align-items:center;">
+                <span class="santa" id="santaBtn" title="Нажми, и Дед Мороз скажет что-то важное!">
+                    🎅
+                    <span class="santa-beard">~~~</span>
+                </span>
+                <div style="font-family:'Caveat',cursive; font-size:0.55rem; color:rgba(255,255,255,0.06); margin-top:-2px;">
+                    ~ нажми ~
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- ===== ПОДАРКИ ПОД ЁЛКОЙ ===== -->
+        <div class="gifts" style="animation: fadeUp 2s ease 1s forwards; opacity:0;">
+            <span class="gift">🎁</span>
+            <span class="gift">🎀</span>
+            <span class="gift">🎁</span>
+            <span class="gift">🎀</span>
+            <span class="gift">🎁</span>
+        </div>
+        
+        <!-- ===== ТЕПЛЫЕ СЛОВА ===== -->
+        <div style="font-family:'Caveat',cursive; font-size:1.4rem; color:rgba(255,255,255,0.5); 
+                    margin:4px 0 3px; line-height:1.4;
+                    animation: fadeUp 2s ease 1.3s forwards; opacity:0; transform:translateY(12px);">
+            <span style="color:#ffd700;">✨</span> 
+            ты — самое тёплое, что случилось в этом году
+            <span style="color:#ffd700;">✨</span>
+        </div>
+        
+        <!-- ===== ТАЙМЕР ===== -->
+        <div class="timer-container" style="animation: fadeUp 2s ease 1.8s forwards; opacity:0; transform:translateY(10px); margin:5px auto;">
+            <div class="timer-label handwritten" style="font-size:0.8rem; color:rgba(255,215,0,0.25); letter-spacing:2px;">
+                ✧ до Нового года ✧
+            </div>
+            <div class="timer" id="timer">
+                <div class="timer-item">
+                    <span class="number" id="days">00</span>
+                    <span class="label">дней</span>
+                </div>
+                <div class="timer-item">
+                    <span class="number" id="hours">00</span>
+                    <span class="label">часов</span>
+                </div>
+                <div class="timer-item">
+                    <span class="number" id="minutes">00</span>
+                    <span class="label">минут</span>
+                </div>
+                <div class="timer-item">
+                    <span class="number" id="seconds">00</span>
+                    <span class="label">секунд</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ===== АДВЕНТ-КАЛЕНДАРЬ ===== -->
+        <div style="animation: fadeUp 2s ease 2.2s forwards; opacity:0; transform:translateY(12px); margin:3px 0;">
+            <div style="font-family:'Caveat',cursive; font-size:1rem; color:rgba(255,215,0,0.15); margin-bottom:4px;">
+                ✧ календарь ожидания ✧
+            </div>
+            <div class="advent" id="adventCalendar">
+                <!-- Создаётся через JavaScript -->
+            </div>
+            <div style="font-family:'Caveat',cursive; font-size:0.55rem; color:rgba(255,215,0,0.06); margin-top:2px;">
+                ~ открывай каждый день, там сюрприз ~
+            </div>
+        </div>
+        
+        <!-- ===== КНОПКИ ===== -->
+        <div class="buttons" style="animation: fadeUp 2s ease 2.6s forwards; opacity:0; transform:translateY(10px);">
+            <button class="btn btn-fire" id="fireBtn">🌟 ЗАЖГИ ЗВЁЗДЫ</button>
+            <button class="btn btn-open" id="cardBtn">💌 ОТКРОЙ СЕРДЦЕ</button>
+            <button class="btn btn-reset" id="resetBtn">🍃 ТИШИНА</button>
+            <a href="stories.html" class="btn btn-stories" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center;">📖 ИСТОРИИ</a>
+        </div>
+        
+        <!-- ===== 3D ОТКРЫТКА (НОВОГОДНЯЯ) ===== -->
+        <div class="card-wrapper" style="animation: fadeUp 2s ease 3s forwards; opacity:0; transform:translateY(10px);">
+            <div class="card" id="card">
+                <div class="card-front">
+                    <!-- Снежинки на фоне (декор) -->
+                    <div class="snow-decor">❄ ❅ ❆ ❄ ❅ ❆</div>
+                    
+                    <!-- Огоньки -->
+                    <div style="position:absolute; top:8px; left:12px; font-size:0.9rem; opacity:0.3; z-index:2;">✨</div>
+                    <div style="position:absolute; top:8px; right:12px; font-size:0.9rem; opacity:0.3; z-index:2;">✨</div>
+                    <div style="position:absolute; bottom:8px; left:12px; font-size:0.9rem; opacity:0.3; z-index:2;">✨</div>
+                    <div style="position:absolute; bottom:8px; right:12px; font-size:0.9rem; opacity:0.3; z-index:2;">✨</div>
+                    
+                    <div class="emoji">🎄</div>
+                    <h2 class="handwritten">С Новым годом!</h2>
+                    <p class="click-hint handwritten">✧ открой, там чудо ✧</p>
+                </div>
+                <div class="card-back">
+                    <div class="card-back-content">
+                        <h2 class="handwritten">❤️ с теплом ❤️</h2>
+                        <p class="handwritten">Аня, ты — <span style="color:#ffd700;">свет</span></p>
+                        <p class="handwritten" style="font-size:0.95rem; color:rgba(255,255,255,0.4);">
+                            который согревает даже холодные дни
+                        </p>
+                        <div style="margin:3px 0; font-size:1.2rem; letter-spacing:4px;">❤️🧡💛💚💙💜</div>
+                        <p class="handwritten" style="font-size:1.1rem; color:#ffd700;">
+                            С Новым годом, моя звёздочка ✦
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ===== МАЛЕНЬКАЯ ЗАПИСКА ===== -->
+        <div style="z-index:10; margin:5px auto 3px; padding:4px 14px; 
+                    background:rgba(255,215,0,0.02); border-radius:12px; 
+                    border:1px dashed rgba(255,215,0,0.03); text-align:center;
+                    animation: fadeUp 2s ease 3.5s forwards; opacity:0; transform:translateY(10px);">
+            <p class="handwritten" style="color:rgba(255,255,255,0.1); font-size:0.7rem; transform:rotate(-0.5deg);">
+                ✧ я рядом, даже если меня не видно ✧
+            </p>
+        </div>
+        
+    </div>
+    
+    <!-- ===== КОНТЕЙНЕРЫ ДЛЯ ЭФФЕКТОВ ===== -->
+    <div id="confetti-container"></div>
+    <div id="snow-container"></div>
+    
+    <!-- ===== ПОДВАЛ ===== -->
+    <footer class="footer" style="animation: fadeUp 2s ease 4s forwards; opacity:0;">
+        <p class="handwritten" style="font-size:0.9rem; opacity:0.08; letter-spacing:2px;">
+            ✧ сделано с теплом, для тебя ✧
+        </p>
+        <p style="font-size:0.45rem; opacity:0.04; font-family:'Caveat',cursive;">
+            и если ты читаешь это — знай, это всё тебе
+        </p>
+    </footer>
+    
+    <!-- ===== ДЕД МОРОЗ — ВСПЛЫВАЮЩЕЕ ОКНО ===== -->
+    <div class="santa-message" id="santaMessage">
+        <span class="santa-icon">🎅</span>
+        <h2>Привет, Аня!</h2>
+        <p>
+            Я знаю, ты — <span style="color:#ffd700;">самая лучшая</span> девочка в этом году!
+        </p>
+        <p style="font-size:1.1rem; opacity:0.5;">
+            Поэтому я принёс тебе <span style="color:#ffd700;">волшебство</span> 
+            в каждом бите этого кода ✨
+        </p>
+        <p style="font-size:1rem; color:#ffd700;">
+            С Новым годом, звёздочка! 🌟
+        </p>
+        <button class="close-santa" id="closeSanta">💫 Спасибо, Дедушка!</button>
+    </div>
+    
+    <!-- ===== ПОДКЛЮЧАЕМ JS ===== -->
+    <script src="js/snow.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/confetti.js"></script>
+    <script src="js/card.js"></script>
+    <script src="js/advent.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/music.js"></script>
+</body>
+</html>
